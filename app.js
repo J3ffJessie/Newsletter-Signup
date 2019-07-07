@@ -39,7 +39,7 @@ app.post("/", function (req, res) {
     url: 'https://us3.api.mailchimp.com/3.0/lists/7d20e4d928',
     method: "POST",
     headers: {
-      "Authorization": "Jeff1" + process.env.MC_Pass
+      "Authorization": process.env.MC_Pass,
     },
     body: jsonData
   };
@@ -51,7 +51,7 @@ app.post("/", function (req, res) {
         res.sendFile(__dirname + "/success.html");
       } else {
         res.sendFile(__dirname + "/failure.html");
-      }
+            }
     }
 
   });
