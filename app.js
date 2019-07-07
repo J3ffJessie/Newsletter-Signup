@@ -50,7 +50,8 @@ app.post("/", function (req, res) {
       if (response.statusCode === 200) {
         res.sendFile(__dirname + "/success.html");
       } else {
-        res.sendFile(__dirname + "/failure.html");
+        console.log(response.statusCode);
+        //res.sendFile(__dirname + "/failure.html");
             }
     }
 
