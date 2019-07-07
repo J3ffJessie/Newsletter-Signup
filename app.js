@@ -1,5 +1,5 @@
 //jshint esversion: 6
-
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
@@ -39,7 +39,7 @@ app.post("/", function (req, res) {
     url: 'https://us3.api.mailchimp.com/3.0/lists/7d20e4d928',
     method: "POST",
     headers: {
-      "Authorization": "Jeff1 bb23cea8281547d062a64f71b0eba369-us3"
+      "Authorization": "Jeff1" + process.env.MC_Pass
     },
     body: jsonData
   };
@@ -58,7 +58,7 @@ app.post("/", function (req, res) {
 
 });
 
-app.post("/failure", function(req, res){
+app.post("/failure", function (req, res) {
   res.redirect("/");
 });
 
